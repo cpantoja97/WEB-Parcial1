@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Satisfy";
+    src: url("https://fonts.google.com/specimen/Satisfy?query=Satisfy");
+}
+
+.banner {
+    font-family: "Satisfy";
+}
+.icon {
+    max-width: 10%;
+}
+.card {
+    width: 18rem;
+}
