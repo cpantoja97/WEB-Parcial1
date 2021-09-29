@@ -1,18 +1,30 @@
 @font-face {
-    font-family: "Satisfy";
-    src: url("resources/fonts/Satisfy-Regular.ttf");
+  font-family: "Satisfy";
+  src: url("resources/fonts/Satisfy-Regular.ttf");
+}
+
+#item-count {
+  box-sizing: border-box;
+  color: rgb(33, 37, 41);
+  display: inline;
+  font-size: 16px;
+  font-weight: normal;
+  height: auto;
+  line-height: 24px;
+  text-align: left;
+  width: auto;
 }
 
 .banner {
-    font-family: "Satisfy";
+  font-family: "Satisfy";
 }
 .icon {
-    width: 35px;
+  width: 35px;
 }
 .bg-cancel {
-    background-color: #ff6160 !important;
-    border-color: #98c8c3 !important;
+  background-color: #ff6160 !important;
+  border-color: #98c8c3 !important;
 }
 .bg-confirm {
-    background-color: #f5ece2 !important;
+  background-color: #f5ece2 !important;
 }
