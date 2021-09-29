@@ -70,7 +70,7 @@ const buildNavBar = () => {
   catalog.forEach((category) => {
     // Creates a Nav Item, styles it with bootstrap, labels it and adds to to navbar
     const navItem = document.createElement("a");
-    navItem.classList.add("nav-item", "nav-link");
+    navItem.classList.add("nav-item", "nav-link", "mx-2");
     navItem.innerHTML = category.name;
     navBar.appendChild(navItem);
 
