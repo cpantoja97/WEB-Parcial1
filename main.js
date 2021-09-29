@@ -127,8 +127,8 @@ const createCartTable = () => {
     // Fill details
     row.insertCell(-1).innerHTML = item.quantity;
     row.insertCell(-1).innerHTML = item.name;
-    row.insertCell(-1).innerHTML = item.price;
-    row.insertCell(-1).innerHTML = item.quantity * item.price;
+    row.insertCell(-1).innerHTML = (item.price).toFixed(2);
+    row.insertCell(-1).innerHTML = (item.quantity * item.price).toFixed(2);
 
     // Add modify buttons
     const modifyCell = row.insertCell(-1);
@@ -277,7 +277,7 @@ const showCartItems = () => {
   orderFooterRow.appendChild(totalCol);
   const totalPriceP = document.createElement("h6");
   totalCol.appendChild(totalPriceP);
-  totalPriceP.innerHTML = `Total: $${getTotalCartPrice()}`;
+  totalPriceP.innerHTML = `Total: $${(getTotalCartPrice()).toFixed(2)}`;
 
   // Add Buttons
   const buttonsCol = document.createElement("div");
@@ -388,7 +388,7 @@ const showProductsFromCategory = (category) => {
     const cardPrice = document.createElement("h6");
     cardBody.appendChild(cardPrice);
     cardPrice.classList.add("card-text", "mt-auto");
-    cardPrice.textContent = `$${product.price}`;
+    cardPrice.textContent = `$${(product.price).toFixed(2)}`;
 
     // Body's Add to Cart Button
     const cardButton = document.createElement("button");
