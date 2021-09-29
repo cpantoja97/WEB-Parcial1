@@ -26,9 +26,9 @@ fetch(URL)
     console.log(catalog);
     const buildNavBar = (catalog) => {
       catalog.forEach((category) => {
-        const navBar = document.querySelector("nav");
+        const navBar = document.getElementById("navbar-content");
         const navItem = document.createElement("a");
-        navItem.classList.add("nav-item");
+        navItem.classList.add("nav-item", "nav-link");
         navItem.innerHTML = category.name;
         navBar.appendChild(navItem);
 
@@ -39,34 +39,31 @@ fetch(URL)
     };
 
     const showProducts = (category) => {
-      const heading = document.getElementById("product-heading");
+      const heading = document.getElementById("main-heading");
       heading.textContent = category;
 
       const { products } = catalog.find((c) => c.name === category);
       console.log(products);
 
-      const cardsRow = document.getElementById("product-cards");
+      const mainContent = document.getElementById("main-content");
 
-      while (cardsRow.firstChild) {
-        cardsRow.removeChild(cardsRow.firstChild);
+      while (mainContent.firstChild) {
+        mainContent.removeChild(mainContent.firstChild);
       }
 
       products.forEach((product) => {
-        /*
-          <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-          */
-
         // Column
         const col = document.createElement("div");
-        cardsRow.appendChild(col);
-        col.classList.add("col", "col-3");
+        mainContent.appendChild(col);
+        col.classList.add(
+          "col",
+          "col-3",
+          "d-flex",
+          "align-items-stretch",
+          "px-2",
+          "pb-3",
+        );
+
         // Card
         const card = document.createElement("div");
         col.appendChild(card);
@@ -81,7 +78,7 @@ fetch(URL)
         // Body
         const cardBody = document.createElement("div");
         card.appendChild(cardBody);
-        card.classList.add("card-body");
+        cardBody.classList.add("card-body", "d-flex", "flex-column","align-items-start");
 
         // Title
         const cardTitle = document.createElement("h5");
@@ -95,14 +92,15 @@ fetch(URL)
         cardDescription.textContent = product.description;
 
         // Price
-        const cardPrice = document.createElement("p");
+        const cardPrice = document.createElement("h6");
         cardBody.appendChild(cardPrice);
-        cardPrice.classList.add("card-text");
+        cardPrice.classList.add("card-text", "mt-auto");
         cardPrice.textContent = `$${product.price}`;
 
         // Button
-        const cardButton = document.createElement("a");
+        const cardButton = document.createElement("button");
         cardBody.appendChild(cardButton);
+        cardButton.type = "button";
         cardButton.classList.add("btn", "btn-dark");
         cardButton.textContent = "Add to cart";
 
