@@ -412,9 +412,6 @@ async function buildSite() {
   catalog = await response.json();
   buildNavBar();
   showProductsFromCategory(catalog[0]);
-
-  // TODO REMOVE
-  showCartItems();
 }
 
 /* Execution */
