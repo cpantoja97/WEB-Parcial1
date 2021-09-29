@@ -9,3 +9,10 @@
 .icon {
     width: 35px;
 }
+.bg-cancel {
+    background-color: #ff6160 !important;
+    border-color: #98c8c3 !important;
+}
+.bg-confirm {
+    background-color: #f5ece2 !important;
+}
